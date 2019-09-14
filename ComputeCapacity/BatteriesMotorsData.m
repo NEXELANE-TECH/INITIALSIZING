@@ -1,7 +1,7 @@
 function[PToW_Bat,Eff_Mot,V_Mot,P_Mot,Mass_Mot] = BatteriesMotorsData
 
 %% BATTERIES
-PToW_Bat = 400;                     %[Wh/kg] energy range [100-1000]
+PToW_Bat = 500;                     %[Wh/kg] energy range [100-1000]
 % There are different kind of batteries the higher the energy range the
 % more expensive the cell/battery is
 

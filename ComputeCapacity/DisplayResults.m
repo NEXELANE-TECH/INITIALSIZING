@@ -1,17 +1,47 @@
-function DisplayResults(Bat_Cap,N_Mot,PowerUnit_Mass,PropUnit_Mass,R,Mass_Fraction)
+function DisplayResults(Bat_Cap,N_Mot,PowerUnit_Mass,PropUnit_Mass,R,Mass_Fraction,name)
 
-disp('Needed battery capacity[kw]:');
-disp(Bat_Cap);
-disp('Needed motor:');
-disp(round(N_Mot));
-disp('PowerUnit Mass [kg]:');
-disp(PowerUnit_Mass);
-disp('Propulsion Unit Mass [kg]:');
-disp(PropUnit_Mass);
-disp('Estimated Range in [km]');
-disp(R);
-disp('Power unit mass to TOW ratio');
-disp(Mass_Fraction);
-disp('\n\n');
 
+if (Mass_Fraction(1,1)>Mass_Fraction(1,2))
+    x = ['This airplane: ', name, ' is viable'];
+    disp(x );
+    
+    disp(name);
+    disp('Needed battery capacity[kwh]:');
+    disp(Bat_Cap);
+    disp('Needed motors:');
+    disp(N_Mot);
+    disp('PowerUnit Mass [kg]:');
+    disp(PowerUnit_Mass);
+    disp('Propulsion Unit Mass [kg]:');
+    disp(PropUnit_Mass);
+    disp('Estimated Range in [km]');
+    disp(R);
+    disp('Mass fraction of the original airplane (fuel):');
+    disp(Mass_Fraction(1,1));
+    disp('Mass fraction of the electric version of the  airplane:');
+    disp(Mass_Fraction(1,2) );
+    
+else
+    answer = input('Do you want to see the aircraft wich did not fit the condition: y/n\n','s');
+    
+    if(answer == 'y' || answer == 'Y')
+        disp(name);
+        disp('Needed battery capacity[kwh]:');
+        disp(Bat_Cap);
+        disp('Needed motors:');
+        disp(N_Mot);
+        disp('PowerUnit Mass [kg]:');
+        disp(PowerUnit_Mass);
+        disp('Propulsion Unit Mass [kg]:');
+        disp(PropUnit_Mass);
+        disp('Estimated Range in [km]');
+        disp(R);
+        disp('Mass fraction of the original airplane (fuel):');
+        disp(Mass_Fraction(1,1));
+        disp('Mass fraction of the electric version of the  airplane:');
+        disp(Mass_Fraction(1,2) );
+    else
+        disp('ok');
+    end
+       
 end
