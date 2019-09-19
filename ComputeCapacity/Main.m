@@ -10,14 +10,14 @@ eta = SystemsEfficiency;
 [PToW_Bat,Eff_Mot,V_Mot,P_Mot,Mass_Mot] = BatteriesMotorsData;
 
 %% =========== Airplane Data ================
-DHC6 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',3,14))';
-DORNIER = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',3,14))';
-IL114 = table2array(ImportAirplaneData3('AirplaneData.xlsx','State Info',3,14))';
-L140 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',17,28))';
-DASH8 = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',17,28))';
-E170 = table2array(ImportAirplaneData3('AirplaneData.xlsx','State Info',17,28))';
-ERJ140 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',31,42))';
-An140 = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',31,42))';
+DHC6 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',3,16))';
+DORNIER = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',3,16))';
+IL114 = table2array(ImportAirplaneData3('AirplaneData.xlsx','State Info',3,16))';
+L140 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',19,32))';
+DASH8 = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',19,32))';
+E170 = table2array(ImportAirplaneData3('AirplaneData.xlsx','State Info',19,32))';
+ERJ140 = table2array(ImportAirplaneData1('AirplaneData.xlsx','State Info',35,48))';
+An140 = table2array(ImportAirplaneData2('AirplaneData.xlsx','State Info',35,48))';
 
 % Correct data after importing from excel in order to have the proper units
 
@@ -65,14 +65,14 @@ An140 = CorrectData(An140,R);
 [Bat_CapERJ140,N_MotERJ140,PowerUnit_MassERJ140,PropUnit_MassERJ140,BatMTOW_FractionERJ140] = ComputeNumberMotBat(P_Mot,ERJ140_CMD(1,3),R,Mass_Mot,PToW_Bat,ERJ140(1,2),ERJ140(1,1),eta(1,1),g,ERJ140(1,12));
 [Bat_CapAn140,N_MotAn140,PowerUnit_MassAn140,PropUnit_MassAn140,BatMTOW_FractionAn140] = ComputeNumberMotBat(P_Mot,An140_CMD(1,3),R,Mass_Mot,PToW_Bat,An140(1,2),An140(1,1),eta(1,1),g,An140(1,12));
 
-DisplayResults(Bat_CapDHC6,N_MotDHC6,PowerUnit_MassDHC6,PropUnit_MassDHC6,DHC6(1,10),BatMTOW_FractionDHC6,'DHC6');
-DisplayResults(Bat_CapDORNIER,N_MotDORNIER,PowerUnit_MassDORNIER,PropUnit_MassDORNIER,DORNIER(1,10),BatMTOW_FractionDORNIER,'DORNIER');
-DisplayResults(Bat_CapIL114,N_MotIL114,PowerUnit_MassIL114,PropUnit_MassIL114,IL114(1,10),BatMTOW_FractionIL114,'IL114');
-DisplayResults(Bat_CapL140,N_MotL140,PowerUnit_MassL140,PropUnit_MassL140,L140(1,10),BatMTOW_FractionL140,'L140');
-DisplayResults(Bat_CapDASH8,N_MotDASH8,PowerUnit_MassDASH8,PropUnit_MassDASH8,DASH8(1,10),BatMTOW_FractionDASH8,'DASH8');
-DisplayResults(Bat_CapE170,N_MotE170,PowerUnit_MassE170,PropUnit_MassE170,E170(1,10),BatMTOW_FractionE170,'E170');
-DisplayResults(Bat_CapERJ140,N_MotERJ140,PowerUnit_MassERJ140,PropUnit_MassERJ140,ERJ140(1,10),BatMTOW_FractionERJ140,'ERJ-140');
-DisplayResults(Bat_CapAn140,N_MotAn140,PowerUnit_MassAn140,PropUnit_MassAn140,An140(1,10),BatMTOW_FractionAn140,'An-140');
+DisplayResults(Bat_CapDHC6,N_MotDHC6,PowerUnit_MassDHC6,PropUnit_MassDHC6,DHC6(1,10),BatMTOW_FractionDHC6,'DHC6',DHC6);
+DisplayResults(Bat_CapDORNIER,N_MotDORNIER,PowerUnit_MassDORNIER,PropUnit_MassDORNIER,DORNIER(1,10),BatMTOW_FractionDORNIER,'DORNIER',DORNIER);
+DisplayResults(Bat_CapIL114,N_MotIL114,PowerUnit_MassIL114,PropUnit_MassIL114,IL114(1,10),BatMTOW_FractionIL114,'IL114',IL114);
+DisplayResults(Bat_CapL140,N_MotL140,PowerUnit_MassL140,PropUnit_MassL140,L140(1,10),BatMTOW_FractionL140,'L140',L140);
+DisplayResults(Bat_CapDASH8,N_MotDASH8,PowerUnit_MassDASH8,PropUnit_MassDASH8,DASH8(1,10),BatMTOW_FractionDASH8,'DASH8',DASH8);
+DisplayResults(Bat_CapE170,N_MotE170,PowerUnit_MassE170,PropUnit_MassE170,E170(1,10),BatMTOW_FractionE170,'E170',E170);
+DisplayResults(Bat_CapERJ140,N_MotERJ140,PowerUnit_MassERJ140,PropUnit_MassERJ140,ERJ140(1,10),BatMTOW_FractionERJ140,'ERJ-140',ERJ140);
+DisplayResults(Bat_CapAn140,N_MotAn140,PowerUnit_MassAn140,PropUnit_MassAn140,An140(1,10),BatMTOW_FractionAn140,'An-140',An140);
 
 Bat_CapT = [Bat_CapDHC6, Bat_CapDORNIER,Bat_CapIL114,Bat_CapL140,Bat_CapDASH8,Bat_CapE170,Bat_CapERJ140,Bat_CapAn140];
 PowerUnit_MassT = [PowerUnit_MassDHC6,PowerUnit_MassDORNIER,PowerUnit_MassIL114,PowerUnit_MassDASH8,PowerUnit_MassE170,PowerUnit_MassERJ140,PowerUnit_MassAn140];
