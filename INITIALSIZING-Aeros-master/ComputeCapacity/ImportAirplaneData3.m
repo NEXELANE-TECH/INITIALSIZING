@@ -1,4 +1,4 @@
-function tableout = ImportAirplaneData2(workbookFile,sheetName,startRow,endRow)
+function tableout = ImportAirplaneData3(workbookFile,sheetName,startRow,endRow)
 %IMPORTFILE Import data from a spreadsheet
 %   DATA = IMPORTFILE(FILE) reads data from the first worksheet in the
 %   Microsoft Excel spreadsheet file named FILE and returns the data as a
@@ -11,7 +11,7 @@ function tableout = ImportAirplaneData2(workbookFile,sheetName,startRow,endRow)
 %   ENDROW as a pair of scalars or vectors of matching size for
 %   dis-contiguous row intervals. To read to the end of the file specify an
 %   ENDROW of inf.%
-% Example:
+% Example:es es
 %   AirplaneData = importfile('AirplaneData.xlsx','State Info',3,13);
 %
 %   See also XLSREAD.
@@ -42,5 +42,4 @@ end
 tableout = table;
 
 %% Allocate imported array to column variable names
-tableout.VarName8 = data(:,1);
-
+tableout.VarName12 = data(:,1);

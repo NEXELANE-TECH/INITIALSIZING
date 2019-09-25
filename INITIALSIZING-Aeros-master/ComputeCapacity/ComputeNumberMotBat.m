@@ -8,6 +8,6 @@ M_Mot = N_Mot*Mass_Mot;                                 %[kg] Total motors mass
 Capacity = (PToW_Bat*M_Bat)/1000; 
 %[kWh] Needed Capacity
 Mass_FractionF = MF/(MTOW);   
-Mass_FractionE = M_Bat/(MTOW-MF);
+Mass_FractionE = M_Bat/(MTOW-MF+M_Bat);
 Mass_Fraction = [Mass_FractionF, Mass_FractionE];
 end
